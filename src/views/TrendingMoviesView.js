@@ -13,12 +13,12 @@ export const TrendingMoviesView = () => {
 
   return (
     <>
+      <h2>Trending today</h2>
       {movies && (
         <ul>
-          кино
           {movies.map(movie => (
             <li key={movie.id}>
-              <Link to={`${movie.id}`}>{movie.title}</Link>
+              <Link to={`movie/${movie.id}`}>{movie.title}</Link>
             </li>
           ))}
         </ul>
