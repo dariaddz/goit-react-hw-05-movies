@@ -1,19 +1,21 @@
 import { Routes, Route } from 'react-router-dom';
-import { TrendingMoviesView } from './views/TrendingMoviesView';
+import { TrendingMoviesView } from '../views/TrendingMoviesView';
+import { MoviesView } from 'views/MoviesView';
+import { Navigation } from './Navigation/Navigation';
+
 
 export const App = () => {
 
 
   return (
     <Routes>
-      {/* <Route path="/" element={<Layout />}> */}
+      <Route path="/" element={<Navigation />}>
 
-        {/* trending */}
         <Route index element={<TrendingMoviesView />} />  
         
 
-        {/* <Route path="movies" element={<MoviesView />}/> */}
-      {/* </Route> */}
+        <Route path="movies" element={<MoviesView />}/>
+      </Route>
     </Routes>
   );
 };
