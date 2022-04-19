@@ -19,26 +19,26 @@ export async function fetchMoviesSearch() {
 }
 
 // ---- movie's details
-const movieId = 414906;
-export async function fetchMovieDetails() {
+// const movieId = 414906;
+export async function fetchMovieDetails(movieID) {
   const response = await axios.get(
-    `movie/${movieId}?api_key=${API_KEY}&language=en-US`
+    `movie/${movieID}?api_key=${API_KEY}&language=en-US`
   );
   return response.data;
 }
 
-// ---- movie's credits
-export async function fetchMovieCredits() {
-  const response = await axios.get(
-    `/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`
-  );
-  return response.data.cast;
-}
+// // ---- movie's credits
+// export async function fetchMovieCredits() {
+//   const response = await axios.get(
+//     `/movie/${movieID}/credits?api_key=${API_KEY}&language=en-US`
+//   );
+//   return response.data.cast;
+// }
 
-// ---- movie's reviews
-export async function fetchMovieReviews() {
-  const response = await axios.get(
-    `movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US`
-  );
-  return response.data;
-}
+// // ---- movie's reviews
+// export async function fetchMovieReviews() {
+//   const response = await axios.get(
+//     `movie/${movieID}/reviews?api_key=${API_KEY}&language=en-US`
+//   );
+//   return response.data;
+// }

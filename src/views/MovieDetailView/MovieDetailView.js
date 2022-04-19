@@ -4,26 +4,25 @@ import { useParams } from 'react-router-dom';
 import { fetchMovieDetails } from 'services/moviesAPI';
 
 export const MovieDetailsView = () => {
-  const { movieId } = useParams();
-  const [movie, setMovie] = useState(null);
+  const { movieID } = useParams();
 
+  const [movie, setMovie] = useState(null);
   useEffect(() => {
-    fetchMovieDetails(414906).then(setMovie);
-  }, [movieId]);
+    fetchMovieDetails(movieID).then(setMovie);
+  }, [movieID]);
 
   return (
     <>
-      <h2>Movie {movieId}</h2>
+      <h2>Movie {movieID}</h2>
       {movie && (
         <>
-          {/* https://image.tmdb.org/t/p/w500/{movie.poster_path} */}
           <img
             src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
             alt={movie.original_title}
           />
-          <p>
+          <h2>
             {movie.original_title} ({movie.release_date})
-          </p>
+          </h2>
           <p>User score: ЦІФРА</p>
           <h3> Overview</h3>
           <p>{movie.overview}</p>
