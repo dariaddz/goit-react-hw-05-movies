@@ -1,6 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
 import { TrendingMoviesView } from '../views/TrendingMoviesView';
 import { MovieDetailsView } from 'views/MovieDetailView/MovieDetailView';
+// import { MoviesPage} from 'views/MoviesPage/'
+import { Layout } from './Layout';
+// import { Cast } from 'views/Cast';
 // import { MoviesView } from 'views/MoviesView';
 // import { Navigation } from './Navigation/Navigation';
 
@@ -10,10 +13,16 @@ export const App = () => {
 
   return (
     <Routes>
-    
-
-    <Route path="/" index element={<TrendingMoviesView />} />  
-    <Route path="/movie/:movieID" index element={<MovieDetailsView/>} />
+      <Route path="/" element={<Layout />}>
+        <Route index element={<TrendingMoviesView />} />
+        {/* <Route path="movies" element={<MoviesPage />}></Route> */}
+        <Route path="movies/:movieID" element={<MovieDetailsView />}>
+          {/* <Route path="cast" element={<Cast/>} /> */}
+        </Route>
+      
+      </Route>
+       
+      
     </Routes>
   );
 };

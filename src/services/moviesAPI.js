@@ -28,15 +28,15 @@ export async function fetchMovieDetails(movieID) {
 }
 
 // // ---- movie's credits
-// export async function fetchMovieCredits() {
-//   const response = await axios.get(
-//     `/movie/${movieID}/credits?api_key=${API_KEY}&language=en-US`
-//   );
-//   return response.data.cast;
-// }
+export async function fetchMovieCredits(movieID) {
+  const response = await axios.get(
+    `/movie/${movieID}/credits?api_key=${API_KEY}&language=en-US`
+  );
+  return response.data.cast;
+}
 
 // // ---- movie's reviews
-// export async function fetchMovieReviews() {
+// export async function fetchMovieReviews(movieID) {
 //   const response = await axios.get(
 //     `movie/${movieID}/reviews?api_key=${API_KEY}&language=en-US`
 //   );
