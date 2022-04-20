@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import s from './SearchBar.module.css';
 
-export default function SearchBar({ onSubmit }) {
+export function SearchBar({ onSubmit }) {
   const [query, setQuery] = useState('');
 
   const onFormSubmit = e => {
@@ -24,7 +24,7 @@ export default function SearchBar({ onSubmit }) {
         <input
           className={s.input}
           type="text"
-          //   value={query}
+          value={query}
           onChange={handleChange}
           autoComplete="off"
           autoFocus

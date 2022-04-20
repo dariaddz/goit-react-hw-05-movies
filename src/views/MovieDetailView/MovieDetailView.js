@@ -3,6 +3,7 @@ import { useParams, Link, Outlet } from 'react-router-dom';
 import { Cast } from 'views/Cast';
 // import { PageHeading } from 'components/PageHeading/PageHeading';
 import { fetchMovieDetails } from 'services/moviesAPI';
+import { Review } from 'views/Review';
 
 export const MovieDetailsView = () => {
   const { movieID } = useParams();
@@ -31,17 +32,16 @@ export const MovieDetailsView = () => {
           <p>{movie.genres.map(genre => genre.name)}</p>
           <hr />
           <h3> Additional info</h3>
-          <ul>
-            <li>
-              <Link to="/movies/:movieID/cast">
-                Cast
-                <Cast />
-              </Link>
-            </li>
-            <li>
-              <Link to="/movies/:movieID/review">Review</Link>
-            </li>
-          </ul>
+
+          <Link to="cast">
+            Cast
+            <Cast />
+          </Link>
+
+          <Link to="review">
+            Review
+            <Review />
+          </Link>
 
           <Outlet />
         </>
