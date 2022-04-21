@@ -5,10 +5,18 @@ export const Navigation = () => {
   return (
     <>
       <nav className={s.navBar}>
-        <NavLink to="/" className={s.navLink}>
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? s.active : s.inactive)}
+        >
           Home
         </NavLink>
-        <NavLink to="/movies">Movies</NavLink>
+        <NavLink
+          to="/movies"
+          className={({ isActive }) => (isActive ? s.active : s.inactive)}
+        >
+          Movies
+        </NavLink>
       </nav>
       <hr />
     </>

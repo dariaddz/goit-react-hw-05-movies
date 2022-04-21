@@ -41,3 +41,8 @@
 .paragraph{
     margin-bottom: 20px;
 }
+
+.inactive{color:black}
+
+.active {
+       color:red}

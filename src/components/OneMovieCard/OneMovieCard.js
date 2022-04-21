@@ -1,4 +1,4 @@
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import s from './OneMovieCard.module.css';
 
 export const OneMovieCard = ({ movie }) => {
@@ -32,8 +32,19 @@ export const OneMovieCard = ({ movie }) => {
           <hr />
           <h3 className={s.title}> Additional info</h3>
 
-          <Link to="cast">Cast</Link>
-          <Link to="review">Review</Link>
+          <NavLink
+            to="cast"
+            className={({ isActive }) => (isActive ? s.active : s.inactive)}
+          >
+            Cast
+          </NavLink>
+
+          <NavLink
+            to="review"
+            className={({ isActive }) => (isActive ? s.active : s.inactive)}
+          >
+            Review
+          </NavLink>
           <Outlet />
         </div>
       )}
