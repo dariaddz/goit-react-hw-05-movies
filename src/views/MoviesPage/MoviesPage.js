@@ -9,10 +9,6 @@ export function MoviesPage() {
 
   const handleFormSubmit = query => {
     setMovieName(query);
-    //   //      navigate({
-    //   //          ...location, search: `query=${query}`
-    //   //                            });
-    console.log(query);
   };
 
   useEffect(() => {
@@ -22,7 +18,6 @@ export function MoviesPage() {
     fetchMoviesSearch(movieName).then(setMovies);
   }, [movieName]);
 
-  console.log(movies);
   return (
     <>
       <SearchBar onSubmit={handleFormSubmit} />
@@ -30,8 +25,3 @@ export function MoviesPage() {
     </>
   );
 }
-
-// <>
-//   {!movies && <SearchBar onSubmit={handleFormSubmit} />}
-//   {movies && <MoviesFound movies={movies} />}
-// </>;

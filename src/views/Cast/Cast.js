@@ -2,18 +2,19 @@ import { useState, useEffect } from 'react';
 import { fetchMovieCredits } from 'services/moviesAPI';
 import { useParams } from 'react-router-dom';
 import s from './Cast.module.css';
+import zeroPicture from '../../images/no-poster-big-2x.jpg';
 
 export const Cast = () => {
   const { movieID } = useParams();
-  const [castList, setCastList] = useState(null);
+  const [castList, setCastList] = useState([]);
 
   useEffect(() => {
     fetchMovieCredits(movieID).then(setCastList);
   }, [movieID]);
-  console.log(castList);
+
   return (
     <>
-      {castList && (
+      {castList.length ? (
         <ul className={s.castList}>
           {castList.map(element => (
             <li key={element.id} className={s.castElement}>
@@ -23,7 +24,7 @@ export const Cast = () => {
                 src={
                   element.profile_path
                     ? `https://image.tmdb.org/t/p/w200/${element.profile_path}`
-                    : '../images/no-poster_2x.jpg'
+                    : `${zeroPicture}`
                 }
                 alt={element.name}
               />
@@ -31,13 +32,9 @@ export const Cast = () => {
             </li>
           ))}
         </ul>
+      ) : (
+        <p>No cast information avaliable</p>
       )}
     </>
   );
 };
-
-//  src={
-//                   movie.poster_path
-//                     ? `https://image.tmdb.org/t/p/w500` + movie.poster_path
-//                     : 'https://raw.githubusercontent.com/SergiusNahnoinyi/goit-react-hw-05-movies/main/public/logo512.png'
-//                 }

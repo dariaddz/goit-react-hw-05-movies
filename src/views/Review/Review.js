@@ -5,16 +5,15 @@ import s from './Review.module.css';
 
 export const Review = () => {
   const { movieID } = useParams();
-  const [reviewList, setReviewList] = useState(null);
-  console.log(movieID);
+  const [reviewList, setReviewList] = useState([]);
+
   useEffect(() => {
     fetchMovieReviews(movieID).then(setReviewList);
   }, [movieID]);
-  console.log(reviewList);
 
   return (
     <>
-      {reviewList && (
+      {reviewList.length !== 0 ? (
         <ul className={s.list}>
           {reviewList.map(element => (
             <li key={element.id} className={s.element}>
@@ -23,7 +22,11 @@ export const Review = () => {
             </li>
           ))}
         </ul>
+      ) : (
+        <p>Sorry, there are no reviews yet</p>
       )}
     </>
   );
 };
+
+/* <p>Sorry, there are no reviews yet</p> */

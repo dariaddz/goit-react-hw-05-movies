@@ -1,0 +1,25 @@
+.list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.link {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 250px;
+    /* height: 280px; */
+    margin-right: 15px;
+    margin-left: 0;
+    margin-bottom: 30px;
+}
+
+.poster {
+    width: 200px
+}
+
+.title {
+    font-weight: 600;
+    margin-top: 10px;
+}

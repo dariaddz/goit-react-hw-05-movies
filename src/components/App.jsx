@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import { TrendingMoviesView } from '../views/TrendingMoviesView';
+import { TrendingMoviesView } from '../views/TrendingMoviesView/TrendingMoviesView';
 import { MovieDetailsView } from 'views/MovieDetailView/MovieDetailView';
 import { MoviesPage} from 'views/MoviesPage/'
 import { Layout } from './Layout';

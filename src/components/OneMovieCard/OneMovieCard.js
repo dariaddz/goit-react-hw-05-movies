@@ -1,6 +1,6 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
-
 import s from './OneMovieCard.module.css';
+import zeroPicture from '../../images/no-poster-big-2x.jpg';
 
 export const OneMovieCard = ({ movie }) => {
   let navigate = useNavigate();
@@ -19,7 +19,11 @@ export const OneMovieCard = ({ movie }) => {
           </button>
           <div className={s.movieCard}>
             <img
-              src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+              src={
+                movie.poster_path
+                  ? `https://image.tmdb.org/t/p/w200/${movie.poster_path}`
+                  : `${zeroPicture}`
+              }
               alt={movie.original_title}
             />
             <div className={s.description}>
