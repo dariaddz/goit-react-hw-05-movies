@@ -9,8 +9,6 @@ export const TrendingMoviesView = () => {
     fetchTrending().then(setMovies);
   }, []);
 
-  console.log(movies);
-
   return (
     <>
       <h2>Trending today</h2>

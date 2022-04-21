@@ -36,9 +36,9 @@ export async function fetchMovieCredits(movieID) {
 }
 
 // // ---- movie's reviews
-// export async function fetchMovieReviews(movieID) {
-//   const response = await axios.get(
-//     `movie/${movieID}/reviews?api_key=${API_KEY}&language=en-US`
-//   );
-//   return response.data;
-// }
+export async function fetchMovieReviews(movieID) {
+  const response = await axios.get(
+    `movie/${movieID}/reviews?api_key=${API_KEY}&language=en-US`
+  );
+  return response.data.results;
+}

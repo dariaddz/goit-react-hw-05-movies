@@ -12,11 +12,13 @@
     border: none;
     border-radius: 15%;
     padding: 5px 10px;
+    font-weight: 600;
 }
 
 .button:hover,
 .button:focus {
     background-color: rgb(216, 216, 216)
+
 }
 
 .button:active {
