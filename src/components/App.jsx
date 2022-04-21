@@ -7,7 +7,7 @@ import { Cast } from 'views/Cast';
 import { Review } from 'views/Review';
 
 // import { MoviesView } from 'views/MoviesView';
-// import { Navigation } from './Navigation/Navigation';
+
 
 
 export const App = () => {

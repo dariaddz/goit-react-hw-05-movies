@@ -6,7 +6,7 @@ import s from './Cast.module.css';
 export const Cast = () => {
   const { movieID } = useParams();
   const [castList, setCastList] = useState(null);
-  console.log(movieID);
+
   useEffect(() => {
     fetchMovieCredits(movieID).then(setCastList);
   }, [movieID]);
@@ -31,3 +31,9 @@ export const Cast = () => {
     </>
   );
 };
+
+//  src={
+//                   movie.poster_path
+//                     ? `https://image.tmdb.org/t/p/w500` + movie.poster_path
+//                     : 'https://raw.githubusercontent.com/SergiusNahnoinyi/goit-react-hw-05-movies/main/public/logo512.png'
+//                 }

@@ -10,16 +10,14 @@ export async function fetchTrending() {
 }
 
 // ---- search movies
-const searchQuery = 'batman';
-export async function fetchMoviesSearch() {
+export async function fetchMoviesSearch(searchQuery) {
   const response = await axios.get(
     `search/movie?api_key=${API_KEY}&query=${searchQuery}&page=1&language=en-US&include_adult=false`
   );
-  return response.data;
+  return response.data.results;
 }
 
 // ---- movie's details
-// const movieId = 414906;
 export async function fetchMovieDetails(movieID) {
   const response = await axios.get(
     `movie/${movieID}?api_key=${API_KEY}&language=en-US`

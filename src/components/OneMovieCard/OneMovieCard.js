@@ -1,12 +1,20 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
+
 import s from './OneMovieCard.module.css';
 
 export const OneMovieCard = ({ movie }) => {
+  let navigate = useNavigate();
   return (
     <>
       {movie && (
         <div>
-          <button className={s.button} type="button">
+          <button
+            className={s.button}
+            type="button"
+            onClick={() => {
+              navigate(-1);
+            }}
+          >
             Go back
           </button>
           <div className={s.movieCard}>
