@@ -20,7 +20,11 @@ export const Cast = () => {
               <h4>{element.name}</h4>
               <img
                 className={s.picture}
-                src={`https://image.tmdb.org/t/p/w200/${element.profile_path}`}
+                src={
+                  element.profile_path
+                    ? `https://image.tmdb.org/t/p/w200/${element.profile_path}`
+                    : '../images/no-poster_2x.jpg'
+                }
                 alt={element.name}
               />
               <p>{element.character}</p>

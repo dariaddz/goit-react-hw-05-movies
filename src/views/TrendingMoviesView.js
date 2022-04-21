@@ -12,6 +12,10 @@ export const TrendingMoviesView = () => {
   return (
     <>
       <h2>Trending today</h2>
+      <img
+        src="https://raw.githubusercontent.com/dariaddz/goit-react-hw-05-movies/src/images/no-poster_2x.jpg"
+        alt="заглушка"
+      />
       {movies && (
         <ul>
           {movies.map(movie => (
