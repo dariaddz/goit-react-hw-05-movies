@@ -5,8 +5,8 @@ import { MoviesPage} from 'views/MoviesPage/'
 import { Layout } from './Layout';
 import { Cast } from 'views/Cast';
 import { Review } from 'views/Review';
+import NotFoundView from 'views/NotFoundView';
 
-// import { MoviesView } from 'views/MoviesView';
 
 
 
@@ -22,14 +22,9 @@ export const App = () => {
           <Route path="cast" element={<Cast />} />
           <Route path="review" element={<Review/>} />
         </Route>
-      
-   
-
-
-
-      </Route>
-       
-      
+     
+         </Route>
+         <Route path="*" element={<NotFoundView />} />
     </Routes>
   );
 };

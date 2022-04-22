@@ -28,5 +28,3 @@ export const Review = () => {
     </>
   );
 };
-
-/* <p>Sorry, there are no reviews yet</p> */

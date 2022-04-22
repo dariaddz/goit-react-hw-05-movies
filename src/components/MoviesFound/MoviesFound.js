@@ -2,8 +2,9 @@ import { Link } from 'react-router-dom';
 import s from './MoviesFound.module.css';
 import zeroPicture from '../../images/no-poster-big-2x.jpg';
 
+import PropTypes from 'prop-types';
+
 export function MoviesFound({ movies, movieName }) {
-  console.log(movies.length, 'movies length found');
   return (
     <>
       {movies.length === 0 ? (
@@ -34,3 +35,8 @@ export function MoviesFound({ movies, movieName }) {
     </>
   );
 }
+
+MoviesFound.propTypes = {
+  movies: PropTypes.array,
+  movieName: PropTypes.string,
+};

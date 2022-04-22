@@ -1,6 +1,7 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import s from './OneMovieCard.module.css';
 import zeroPicture from '../../images/no-poster-big-2x.jpg';
+import PropTypes from 'prop-types';
 
 export const OneMovieCard = ({ movie }) => {
   let navigate = useNavigate();
@@ -64,4 +65,8 @@ export const OneMovieCard = ({ movie }) => {
       )}
     </>
   );
+};
+
+OneMovieCard.propTypes = {
+  movie: PropTypes.object,
 };
