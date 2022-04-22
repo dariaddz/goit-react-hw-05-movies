@@ -42,22 +42,24 @@ export const OneMovieCard = ({ movie }) => {
             </div>
           </div>
           <hr />
-          <h3 className={s.title}> Additional info</h3>
+          <div className={s.additionalNav}>
+            <h3 className={s.title}> Additional info</h3>
 
-          <NavLink
-            to="cast"
-            className={({ isActive }) => (isActive ? s.active : s.inactive)}
-          >
-            Cast
-          </NavLink>
+            <NavLink
+              to="cast"
+              className={({ isActive }) => (isActive ? s.active : s.inactive)}
+            >
+              Cast
+            </NavLink>
 
-          <NavLink
-            to="review"
-            className={({ isActive }) => (isActive ? s.active : s.inactive)}
-          >
-            Review
-          </NavLink>
-          <Outlet />
+            <NavLink
+              to="review"
+              className={({ isActive }) => (isActive ? s.active : s.inactive)}
+            >
+              Review
+            </NavLink>
+            <Outlet />
+          </div>
         </div>
       )}
     </>

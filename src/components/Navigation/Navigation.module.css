@@ -1,7 +1,10 @@
 .navBar {
    
     font-weight: 600;
-    font-size: 18px
+    font-size: 18px;
+    background-color: var(--secondary-background-color);
+    padding-top:10px;
+    padding-bottom:10px
 }
 
 .inactive{
@@ -12,12 +15,13 @@
 }
 
 .active{
-    color: red;
+    color: var(--primary-accent-color);
 }
 
 hr {
-    color: #4c4b4b;
-    background-color: #4c4b4b;
+    color: var(--primary-text-color);;
+    background-color:var(--primary-text-color);
     border: 0px none;
-    height: 1px
+    height: 1px;
+    margin:0
 }

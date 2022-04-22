@@ -13,7 +13,7 @@ export const TrendingMoviesView = () => {
 
   return (
     <>
-      <h2>Trending today</h2>
+      <h2 className={s.header}>Trending today</h2>
 
       {movies && (
         <ul className={s.list}>

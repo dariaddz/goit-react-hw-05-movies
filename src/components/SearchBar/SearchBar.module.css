@@ -1,5 +1,6 @@
 .searchForm {
     margin-left: 20px;
+    margin-top:10px;
 }
 
 .input {
@@ -17,7 +18,7 @@
 
 .button:hover,
 .button:focus {
-    background-color: rgb(216, 216, 216)
+    background-color: var(--primary-accent-color)
 
 }
 
