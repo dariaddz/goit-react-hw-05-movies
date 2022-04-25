@@ -5,7 +5,7 @@ import { MoviesPage} from 'views/MoviesPage/'
 import { Layout } from './Layout';
 import { Cast } from 'views/Cast';
 import { Review } from 'views/Review';
-import NotFoundView from 'views/NotFoundView';
+import { NotFoundView } from 'views/NotFoundView';
 
 
 
@@ -22,9 +22,9 @@ export const App = () => {
           <Route path="cast" element={<Cast />} />
           <Route path="review" element={<Review/>} />
         </Route>
-     
-         </Route>
-         <Route path="*" element={<NotFoundView />} />
+        <Route path="*" element={<NotFoundView />} />
+      </Route>
+         
     </Routes>
   );
 };

@@ -1,23 +1,25 @@
-import { NavLink, Outlet, useNavigate } from 'react-router-dom';
+import { NavLink, Link, Outlet } from 'react-router-dom';
 import s from './OneMovieCard.module.css';
 import zeroPicture from '../../images/no-poster-big-2x.jpg';
 import PropTypes from 'prop-types';
 
 export const OneMovieCard = ({ movie }) => {
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
   return (
     <>
       {movie && (
         <div>
-          <button
-            className={s.button}
-            type="button"
-            onClick={() => {
-              navigate(-1);
-            }}
-          >
-            Go back
-          </button>
+          <Link to="/">
+            <button
+              className={s.button}
+              type="button"
+              // onClick={() => {
+              //   navigate(-1);
+              // }}
+            >
+              Go back
+            </button>
+          </Link>
           <div className={s.movieCard}>
             <img
               src={

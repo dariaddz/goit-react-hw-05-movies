@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import s from './SearchBar.module.css';
+import toast from 'react-hot-toast';
 
 export function SearchBar({ onSubmit }) {
   const [query, setQuery] = useState('');
@@ -9,7 +10,7 @@ export function SearchBar({ onSubmit }) {
     e.preventDefault();
 
     if (query.trim() === '') {
-      return alert('Введите название фильма');
+      return toast.error('Please enter movie name');
     }
     onSubmit(query);
     setQuery('');
