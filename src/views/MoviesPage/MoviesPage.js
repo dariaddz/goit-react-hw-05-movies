@@ -3,7 +3,7 @@ import { SearchBar } from '../../components/SearchBar';
 import { MoviesFound } from '../../components/MoviesFound';
 import { fetchMoviesSearch } from 'services/moviesAPI';
 
-export function MoviesPage() {
+export default function MoviesPage() {
   const [movieName, setMovieName] = useState('');
   const [movies, setMovies] = useState(null);
 

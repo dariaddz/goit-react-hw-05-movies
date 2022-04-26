@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import s from './Cast.module.css';
 import zeroPicture from '../../images/no-poster-big-2x.jpg';
 
-export const Cast = () => {
+export default function Cast() {
   const { movieID } = useParams();
   const [castList, setCastList] = useState([]);
 
@@ -37,4 +37,4 @@ export const Cast = () => {
       )}
     </>
   );
-};
+}

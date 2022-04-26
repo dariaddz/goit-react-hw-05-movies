@@ -4,7 +4,7 @@ import { fetchMovieDetails } from 'services/moviesAPI';
 
 import { OneMovieCard } from 'components/OneMovieCard';
 
-export const MovieDetailsView = () => {
+export default function MovieDetailsView() {
   const { movieID } = useParams();
   const [movie, setMovie] = useState(null);
 
@@ -13,4 +13,4 @@ export const MovieDetailsView = () => {
   }, [movieID]);
 
   return <OneMovieCard movie={movie} />;
-};
+}

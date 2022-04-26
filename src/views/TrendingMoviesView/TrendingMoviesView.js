@@ -4,7 +4,7 @@ import { fetchTrending } from 'services/moviesAPI';
 import s from './TrendingMoviesView.module.css';
 import zeroPicture from '../../images/no-poster-big-2x.jpg';
 
-export const TrendingMoviesView = () => {
+export default function TrendingMoviesView() {
   const [movies, setMovies] = useState(null);
 
   useEffect(() => {
@@ -39,4 +39,4 @@ export const TrendingMoviesView = () => {
       )}
     </>
   );
-};
+}
