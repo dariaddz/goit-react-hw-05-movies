@@ -7,6 +7,7 @@ import zeroPicture from '../../images/no-poster-big-2x.jpg';
 export default function Cast() {
   const { movieID } = useParams();
   const [castList, setCastList] = useState([]);
+  // const location = useLocation();
 
   useEffect(() => {
     fetchMovieCredits(movieID).then(setCastList);

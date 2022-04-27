@@ -1,10 +1,13 @@
 import { Link } from 'react-router-dom';
 import s from './MoviesFound.module.css';
 import zeroPicture from '../../images/no-poster-big-2x.jpg';
+import { useLocation } from 'react-router-dom';
 
 import PropTypes from 'prop-types';
 
 export function MoviesFound({ movies, movieName }) {
+  const location = useLocation();
+
   return (
     <>
       {movies.length === 0 ? (
@@ -15,7 +18,11 @@ export function MoviesFound({ movies, movieName }) {
           <ul className={s.list}>
             {movies.map(movie => (
               <li key={movie.id} className={s.element}>
-                <Link to={`${movie.id}`} className={s.link}>
+                <Link
+                  to={`${movie.id}`}
+                  state={{ from: location }}
+                  className={s.link}
+                >
                   <img
                     className={s.poster}
                     src={

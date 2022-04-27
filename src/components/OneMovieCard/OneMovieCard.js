@@ -1,22 +1,17 @@
-import { NavLink, Link, Outlet } from 'react-router-dom';
+import { NavLink, Link, Outlet, useLocation } from 'react-router-dom';
 import s from './OneMovieCard.module.css';
 import zeroPicture from '../../images/no-poster-big-2x.jpg';
 import PropTypes from 'prop-types';
 
 export const OneMovieCard = ({ movie }) => {
-  // let navigate = useNavigate();
+  const location = useLocation();
+
   return (
     <>
       {movie && (
         <div>
-          <Link to="/">
-            <button
-              className={s.button}
-              type="button"
-              // onClick={() => {
-              //   navigate(-1);
-              // }}
-            >
+          <Link to={!location.state ? '/' : location.state.from}>
+            <button className={s.button} type="button">
               Go back
             </button>
           </Link>
@@ -50,6 +45,7 @@ export const OneMovieCard = ({ movie }) => {
 
             <NavLink
               to="cast"
+              state={{ from: location }}
               className={({ isActive }) => (isActive ? s.active : s.inactive)}
             >
               Cast
@@ -57,6 +53,7 @@ export const OneMovieCard = ({ movie }) => {
 
             <NavLink
               to="review"
+              state={{ from: location }}
               className={({ isActive }) => (isActive ? s.active : s.inactive)}
             >
               Review
